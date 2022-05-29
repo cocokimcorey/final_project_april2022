@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  color: #24252a;
+  font-size: 30px;
+  text-transform: capitalize;
+}
+
+li,
+a {
+  font-weight: 400;
+  font-size: 14px;
+  color: #24252a;
+  text-decoration: none;
+}
+
+header {
+  background-color: #fdbc6d;
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 10%;
+}
+
+.logo {
+  cursor: pointer;
+  margin-right: auto;
+} /*this changes the cursor style and moves the logo just a bit to the right*/
+
+ul {
+  list-style: none;
+  text-decoration: none;
+  text-transform: capitalize;
+} /*this removes the formatting and list style as well as adds capital letters to the nav links titles*/
+
+.jsheader p h1 {
+  margin-bottom: 20px;
+}
+.jsinput {
+  margin-top: 20px;
+}
+
+.js__list {
+  list-style-type: disc;
+  line-height: 1.5;
+  margin: 10px;
+}
+
+.nav__links li {
+  display: inline-block;
+  padding: 0px 20px;
+} /*this changes the way the nav links are displayed*/
+
+.nav__links li a {
+  transition: all 0.4s ease 0s;
+}
+
+.nav__links li a:hover {
+  color: #5becd4;
+} /*this changes the color of the nav links when cursor hovers over it*/
+
+main {
+  background-color: #ffffff;
+  grid-area: main;
+}
+
+.main__header {
+  text-align: center;
+  margin: 50px;
+}
+
+.block__image {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+}
+
+.block__heading {
+  text-align: center;
+  margin: 20px;
+}
+
+.block__content {
+  margin: 50px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.galleryblock__title h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.galleryblock {
+  width: 100%;
+  display: grid;
+  grid-area: body;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 0.5em;
+}
+
+img {
+  opacity: 1.0;
+  filter: alpha(opacity=100);
+}
+
+/*when cursor hovers over image, make the image a bit lighter/opaque */
+.galleryblock img:hover {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #fdbc6d;
+  grid-area: footer;
+}
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-col {
+  width: 25%;
+  padding: 20px;
+}
+
+.footer-col h4 {
+  font-size: 14px;
+  color: #24252a;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  font-weight: 700;
+  position: relative;
+}
+
+/* this is for the styled line under the footer headings  */
+.footer-col h4::before {
+  content: ""; /*no content, but something that takes up 'space'*/
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  background-color: #eb7640;
+  height: 1.5px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+.footer-col ul li {
+  line-height: 2;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #24252a;
+  padding-left: 8px; /*this moves the text to the right when hovering over it*/
+  transition: all 0.3s ease;
+}
+
+/* this is for the social links and formatting*/
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-right: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%; /*turns background into a circle*/
+  color: #24252a;
+  transition: all 0.3 ease;
+}
+
+/* when social links are hovered over*/
+.footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: #eb7640;
+}
+
+@media (min-width: 1024px) {
+  body {
+    grid-template-columns: 150px 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 180px;
+    grid-template-areas:
+      "header header header header"
+      "main main main main"
+      "footer footer footer footer";
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1023px) {
+  body {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 1fr 200px;
+    grid-template-areas:
+      "header header header"
+      "main main main"
+      "footer footer footer";
+  }
+  .galleryblock {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "img1  img2  img3 "
+      "img4  img5  img6"
+      "img7  img8  img9"
+      "img10 img11 img12";
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 1fr 200px;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+  }
+
+  .nav__links {
+      display: flex;
+      justify-content: center;
+  }
+
+  .row{
+      display: block;
+  }
+
+  .galleryblock {
+    grid-template-columns: 1fr ;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "img1"
+      "img2"
+      "img3"
+      "img4"
+      "img5"
+      "img6"
+      "img7"
+      "img8"
+      "img9"
+      "img10"
+      "img11"
+      "img12";
+  }
+
+  .footer-col{
+      display: inline-block;
+      align-items: center;
+  }
+
+  .footer-col .social-links{
+      display: flex;
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="this is my first project" />
+    <meta name="author" content="Coco Kim-Corey" />
+    <meta name="keywords" content="javascript text box" />
+    <title>Coco's Javascript Project</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/> <!-- this is the link for the social media icons at the footer -->
+    <script src="./assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a href="./index.html">
+        <img class="logo" src="assets/images/logoipsum-logo-26.svg" alt="logo"/>
+      </a>
+      <nav>
+        <ul class="nav__links">
+          <li><a href="./index.html">home</a></li>
+          <li><a href="./gallery.html">gallery</a></li>
+          <li><a href="./javascript.html">javascript</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+        <div>
+            <h1>javascript project</h1>
+            <br>
+            <p>Enter text into the text box and click the 'add' button</p>
+        </div>
+        <div class="jsinput">
+            <input type="text" placeholder="text" data-item />
+                    <!-- text box, input type is text and there is the word 'text' written in the input box -->
+            <button onclick="addItem()">add</button>
+                    <!-- when this button is clicked, js will listen for the "addItem" and 'act' accordingly -->
+            <ul class="js__list" data-list></ul>
+                    <!-- an unordered data list of the text enetered will be displayed -->
+        </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>more links</h4>
+            <ul>
+              <li><a href="#">home</a></li>
+              <li><a href="#">gallery</a></li>
+              <li><a href="#">javascript</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>more links</h4>
+            <ul>
+              <li><a href="#">lorem</a></li>
+              <li><a href="#">impsum</a></li>
+              <li><a href="#">dolor</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>more links</h4>
+            <ul>
+              <li><a href="#">lorem</a></li>
+              <li><a href="#">impsum</a></li>
+              <li><a href="#">dolor</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>social media links</h4>
+            <div class="social-links">
+              <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
